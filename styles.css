@@ -192,13 +192,14 @@ section{ padding:100px 0; }
    TRAINERS
    ========================================================= */
 .trainers-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.trainers-grid.trainers-grid--single{ grid-template-columns:minmax(0,340px); justify-content:center; }
 .trainer-card{
   background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
   overflow:hidden; transition:border-color .2s, transform .2s;
 }
 .trainer-card:hover{ border-color:var(--accent); transform:translateY(-4px); }
 .trainer-photo{ aspect-ratio:3/4; overflow:hidden; background:var(--bg-card-2); }
-.trainer-photo img{ width:100%; height:100%; object-fit:cover; }
+.trainer-photo img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
 .trainer-photo.placeholder{ display:flex; align-items:center; justify-content:center; }
 .trainer-photo.placeholder svg{ width:64px; height:64px; color:var(--border); }
 .trainer-body{ padding:22px 24px 26px; }
@@ -316,7 +317,8 @@ section{ padding:100px 0; }
   .hero-media{ max-width:420px; margin:0 auto; }
   .why-grid, .contact-grid{ grid-template-columns:1fr; gap:36px; }
   .why-media{ max-width:420px; margin:0 auto; order:-1; }
-  .trainers-grid, .pricing-grid, .testimonials-grid{ grid-template-columns:1fr; max-width:420px; margin-left:auto; margin-right:auto; }
+  .pricing-grid, .testimonials-grid{ grid-template-columns:1fr; max-width:420px; margin-left:auto; margin-right:auto; }
+  .trainers-grid{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; }
   .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px; }
 }
 
