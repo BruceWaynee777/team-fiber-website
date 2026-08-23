@@ -78,11 +78,11 @@ ul{ margin:0; padding:0; }
 }
 .eyebrow::before{ content:''; width:8px; height:8px; border-radius:50%; background:var(--accent); }
 .eyebrow-center{ justify-content:center; }
-.section-head{ text-align:center; max-width:640px; margin:0 auto 52px; }
+.section-head{ text-align:center; max-width:640px; margin:0 auto 40px; }
 .section-title{ font-size:clamp(1.9rem,4vw,2.7rem); }
 .section-title-left{ text-align:left; margin:0; max-width:none; }
 
-section{ padding:100px 0; }
+section{ padding:80px 0; }
 
 /* =========================================================
    NAVBAR
@@ -112,7 +112,7 @@ section{ padding:100px 0; }
 /* =========================================================
    HERO
    ========================================================= */
-.hero{ padding:80px 0 100px; position:relative; overflow:hidden; }
+.hero{ padding:60px 0 76px; position:relative; overflow:hidden; }
 .hero::before{
   content:''; position:absolute; top:-120px; right:-120px;
   width:420px; height:420px; border-radius:50%;
@@ -120,9 +120,9 @@ section{ padding:100px 0; }
   pointer-events:none;
 }
 .hero-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center; position:relative; }
-.hero h1{ font-size:clamp(2.6rem,5.2vw,4.3rem); margin-bottom:22px; }
+.hero h1{ font-size:clamp(2.6rem,5.2vw,4.3rem); margin-bottom:18px; }
 .hero h1 span{ color:var(--accent); }
-.hero-sub{ font-size:1.08rem; max-width:460px; margin-bottom:34px; }
+.hero-sub{ font-size:1.08rem; max-width:460px; margin-bottom:28px; }
 .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
 .hero-media{ position:relative; border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); aspect-ratio:4/5; }
 .hero-media img{ width:100%; height:100%; object-fit:cover; object-position:35% 15%; }
@@ -143,7 +143,7 @@ section{ padding:100px 0; }
 /* =========================================================
    STATS
    ========================================================= */
-.stats{ padding:56px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.stats{ padding:44px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
 .stat-num{ font-family:var(--display); font-weight:800; font-size:clamp(1.8rem,4vw,2.6rem); color:var(--accent); }
 .stat-label{ font-size:.86rem; color:var(--text-dim); margin-top:4px; }
@@ -175,9 +175,9 @@ section{ padding:100px 0; }
 .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 .why-media{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); aspect-ratio:4/5; }
 .why-media img{ width:100%; height:100%; object-fit:cover; }
-.why-copy h2{ font-size:clamp(1.8rem,3.6vw,2.4rem); margin-bottom:18px; }
-.why-copy > p{ font-size:1rem; margin-bottom:32px; max-width:460px; }
-.why-list{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.why-copy h2{ font-size:clamp(1.8rem,3.6vw,2.4rem); margin-bottom:16px; }
+.why-copy > p{ font-size:1rem; margin-bottom:26px; max-width:460px; }
+.why-list{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
 .why-item{ display:flex; gap:14px; align-items:flex-start; }
 .why-icon{
   width:40px; height:40px; border-radius:10px; flex-shrink:0;
@@ -189,23 +189,22 @@ section{ padding:100px 0; }
 .why-item p{ font-size:.86rem; margin:0; }
 
 /* =========================================================
-   TRAINERS
+   TRAINERS / COACH
    ========================================================= */
-.trainers-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.trainers-grid.trainers-grid--single{ grid-template-columns:minmax(0,340px); justify-content:center; }
-.trainer-card{
-  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
-  overflow:hidden; transition:border-color .2s, transform .2s;
-}
-.trainer-card:hover{ border-color:var(--accent); transform:translateY(-4px); }
-.trainer-photo{ aspect-ratio:3/4; overflow:hidden; background:var(--bg-card-2); }
-.trainer-photo img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
-.trainer-photo.placeholder{ display:flex; align-items:center; justify-content:center; }
-.trainer-photo.placeholder svg{ width:64px; height:64px; color:var(--border); }
-.trainer-body{ padding:22px 24px 26px; }
-.trainer-body h3{ font-size:1.08rem; font-weight:700; margin-bottom:4px; }
-.trainer-role{ font-size:.82rem; color:var(--accent); font-weight:600; margin-bottom:10px; display:block; }
-.trainer-body p{ font-size:.88rem; margin:0; }
+.trainers-layout{ display:grid; grid-template-columns:.95fr 1.05fr; gap:56px; align-items:center; }
+.trainer-media{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); aspect-ratio:4/5; }
+.trainer-media img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
+.trainer-content .eyebrow{ margin-bottom:14px; }
+.trainer-content .section-title-left{ font-size:clamp(1.7rem,3.2vw,2.3rem); margin-bottom:24px; }
+.trainer-name{ font-family:var(--display); font-size:1.28rem; font-weight:800; margin-bottom:4px; }
+.trainer-role{ font-size:.85rem; color:var(--accent); font-weight:600; display:block; margin-bottom:14px; }
+.trainer-bio{ font-size:.98rem; max-width:440px; margin-bottom:24px; }
+.trainer-credentials{ list-style:none; margin:0 0 30px; display:flex; flex-direction:column; gap:10px; }
+.trainer-credentials li{ font-size:.92rem; color:var(--text-dim); padding-left:26px; position:relative; }
+.trainer-credentials li::before{ content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700; }
+.trainer-cta{ display:inline-flex; align-items:center; gap:8px; font-size:.9rem; font-weight:700; color:var(--accent); }
+.trainer-cta svg{ width:16px; height:16px; transition:transform .2s; }
+.trainer-cta:hover svg{ transform:translateX(4px); }
 
 /* =========================================================
    PRICING
@@ -249,7 +248,7 @@ section{ padding:100px 0; }
 /* =========================================================
    FINAL CTA
    ========================================================= */
-.final-cta{ position:relative; padding:110px 0; overflow:hidden; }
+.final-cta{ position:relative; padding:86px 0; overflow:hidden; }
 .final-cta-media{ position:absolute; inset:0; }
 .final-cta-media img{ width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
 .final-cta-scrim{ position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,10,10,.94), rgba(10,10,10,.8)); }
@@ -260,12 +259,12 @@ section{ padding:100px 0; }
 /* =========================================================
    CONTACT / VISIT
    ========================================================= */
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:stretch; }
+.contact-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:start; }
 .contact-line{ font-size:.96rem; margin-bottom:14px; color:var(--text-dim); }
 .contact-line strong{ color:var(--text); display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:3px; }
 .contact-copy .btn{ margin-top:10px; }
-.contact-map{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); min-height:320px; }
-.contact-map iframe{ width:100%; height:100%; min-height:320px; border:0; filter:grayscale(.3) invert(.92) contrast(.9); }
+.contact-map{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); aspect-ratio:4/5; max-height:380px; opacity:.9; }
+.contact-map iframe{ width:100%; height:100%; border:0; filter:grayscale(.3) invert(.92) contrast(.9); }
 
 /* =========================================================
    FOOTER
@@ -301,7 +300,7 @@ section{ padding:100px 0; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   .reveal{ opacity:1; transform:none; transition:none; }
-  .btn:hover, .program-card:hover, .trainer-card:hover, .price-card:hover{ transform:none; }
+  .btn:hover, .program-card:hover, .price-card:hover{ transform:none; }
 }
 
 /* =========================================================
@@ -318,12 +317,14 @@ section{ padding:100px 0; }
   .why-grid, .contact-grid{ grid-template-columns:1fr; gap:36px; }
   .why-media{ max-width:420px; margin:0 auto; order:-1; }
   .pricing-grid, .testimonials-grid{ grid-template-columns:1fr; max-width:420px; margin-left:auto; margin-right:auto; }
-  .trainers-grid{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; }
+  .trainers-layout{ grid-template-columns:1fr; gap:32px; }
+  .trainer-media{ max-width:380px; margin:0 auto; }
   .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px; }
+  .contact-map{ max-height:none; aspect-ratio:16/10; }
 }
 
 @media (max-width: 760px){
-  section{ padding:64px 0; }
+  section{ padding:52px 0; }
   .main-nav{
     position:fixed; inset:80px 0 auto 0;
     background:var(--bg); border-bottom:1px solid var(--border);
