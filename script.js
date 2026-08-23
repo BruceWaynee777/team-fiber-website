@@ -40,7 +40,7 @@ if ('IntersectionObserver' in window) {
 const statEls = document.querySelectorAll('.stat-num-value');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function animateCount(el) {
+function animateCount(el, delay = 0) {
   const target = parseInt(el.dataset.countTo, 10) || 0;
 
   if (prefersReducedMotion) {
@@ -48,22 +48,31 @@ function animateCount(el) {
     return;
   }
 
-  const duration = 1400; // ms
-  const start = performance.now();
+  const duration = 2600; // ms — slow enough to actually watch it climb
 
-  function tick(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic — fast start, gentle landing
-    el.textContent = Math.round(eased * target);
+  function start(now) {
+    const startTime = now;
 
-    if (progress < 1) {
-      requestAnimationFrame(tick);
-    } else {
-      el.textContent = target; // guarantee the exact final number
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic — fast start, gentle landing
+      el.textContent = Math.round(eased * target);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target; // guarantee the exact final number
+      }
     }
+
+    requestAnimationFrame(tick);
   }
 
-  requestAnimationFrame(tick);
+  if (delay > 0) {
+    setTimeout(() => requestAnimationFrame(start), delay);
+  } else {
+    requestAnimationFrame(start);
+  }
 }
 
 if (statEls.length) {
@@ -71,7 +80,8 @@ if (statEls.length) {
     const statObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          animateCount(entry.target);
+          const index = Array.from(statEls).indexOf(entry.target);
+          animateCount(entry.target, index * 150); // slight cascade across the four stats
           statObserver.unobserve(entry.target);
         }
       });
